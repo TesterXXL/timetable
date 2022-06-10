@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url('https://fonts.googleapis.com/css?family=Recursive:Extra-bold,800');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@page { size: auto;  margin: 0mm; }
+@media print {
+  .NOTE {
+    margin-top: 35px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    display: block !important;
+    font-size: 20px;
+    font-family: Poppins;
+    color: #FF0000;
+  }
+  .PANEL {
+    display: none;
+  }
+  .timetable {
+    display: block;
+    margin: auto;
+  }
+}
+::-webkit-scrollbar {
+  background: #FF0000;
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #EAEAEA;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(125deg,#B7B7B7,#B7B7B7);
+  border-radius: 10px;
+}
+:root {
+  --column-height: 70px;
+  --column-width: 90px;
+}
+* {
+  text-align: center;
+  box-sizing: border-box;
+  font-family: 'Roboto';
+}
+body {
+  overflow-x: auto;
+  display: flex;
+  gap: 20px;
+}
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Recursive;
+  color: #007bff;
+}
+.NOTE {
+  display: none;
+}
+.timetable {
+  height: 567px;
+  max-width: 100%;
+  background: #fff;
+  display: inline-flex;
+}
+.timetable > div {
+  border: 1.2px solid #e9e9e9;
+  border-right: 0;
+}
+.CONTENT {
+  overflow-x: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width: 100%;
+}
+.CONTAINER, .HEAD {
+  display: flex;
+  flex-direction: row;
+}
+.CONTAINER {
+  position: relative;
+}
+.DAYS {
+  font-size: 18px;
+  min-width: 150px;
+}
+.DAY:first-child {
+  font-weight: bold;
+}
+.DAY {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--column-height);
+  border-bottom: 1.2px solid #e9e9e9;
+}
+.DAY:last-child {
+  border: 0;
+}
+.HEAD-HOUR {
+  min-height: var(--column-height);
+  flex-direction: column;
+  min-width: var(--column-width);
+  border-right: 1.2px solid #e9e9e9;
+  border-bottom: 1.2px solid #e9e9e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HEAD-HOUR .NUMB {
+  font-size: 18px;
+  font-weight: bold;
+}
+.HEAD-HOUR .NUMB {
+  font-size: 18px;
+  font-weight: bold;
+}
+.HEAD-HOUR .HEAD-HOUR-TIME {
+  color: #727272;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.HOUR {
+  display: flex;
+  width: 100%;
+  min-width: var(--column-width);
+  min-height: var(--column-height);
+  border-right: 1.2px solid #e9e9e9;
+}
+.HALF {
+  height: auto;
+  width: 50%;
+}
+.HALF:first-child {
+  border-right: 0.9px solid #e9e9e9;
+}
+.ADDS {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 765px;
+}
+.ADDS-ROW {
+  display: flex;
+  position: relative;
+  font-size: 18px;
+  height: var(--column-height);
+  width: 100%;
+}
+.ADDS-ROW-HOUR {
+  position: absolute;
+  top: 1.5px;
+  color: white;
+  border-radius: 7px;
+  height: calc(var(--column-height) - 3px);;
+}
+.ADDS-ROW-HOUR-NAME {
+  top: 19px;
+  position: relative;
+  color: white;
+}
+.ADDS-ROW-HOUR-DETAILS {
+  position: absolute;
+  font-size: 10px;
+}
+.TOP-LEFT, .TOP-RIGHT {
+  top: 2px;
+}
+.BOTTOM-RIGHT, .BOTTOM-LEFT {
+  bottom: 2px;
+}
+.TOP-LEFT {
+  left: 10px;
+}
+.TOP-RIGHT {
+  right: 10px;
+}
+.BOTTOM-RIGHT {
+  right: 10px;
+}
+.BOTTOM-LEFT {
+  left: 10px;
+}
+.PANEL {
+  background: #fff;
+  box-shadow: 0 0 5px #D3D3D3;
+  height: 100%;
+  left: 0;
+  top: 0;
+  max-width: 400px;
+  width: 100%;
+}
+.active {
+  background: #007bff !important;
+  color: #fff !important;
+}
+button {
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.PANEL-BTNS {
+  display: flex;
+  width: 100%;
+}
+.PANEL-BTNS > button {
+  width: 50%;
+  min-height: 30px;
+  font-size: 20px;
+  font-family: 'Recursive';
+  color: #007bff;
+  border: 0;
+}
+.PANEL-BTNS > button:hover {
+  background: #007bff;
+  color: #fff;
+}
+label {
+  font-family: "Poppins";
+  font-size: 18px;
+  color: #212121;
+  margin-bottom: 7px;
+}
+input, select, .COLOR-DIV {
+  margin: 0 auto;
+  max-width: 95%;
+}
+input, select {
+  border: 2px solid #E4E4E4;
+  -webkit-transition: all ease-in-out .3s;
+  -o-transition: all ease-in-out .3s;
+  transition: all ease-in-out .3s;
+}
+input[type="text"], select {
+  margin-bottom: 10px;
+  font-family: "Poppins";
+  font-size: 17px;
+  width: 100%;
+  height: auto;
+  padding: 5px 5px;
+  outline: none;
+  border-radius: 5px;
+}
+input:hover, input:focus, select:hover, select:focus {
+  border: 2px solid #007bff;
+}
+.ADD-TEXT-DIV {
+  transition: visibility 0s, opacity 0.5s linear;
+  visibility: visible;
+  padding: 5px;
+  margin-top: 20px;
+  background: #F1F1F1;
+}
+.hidden {
+  transition: visibility 0s, opacity 0.5s linear;
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+.SUBMIT, .REMOVE, .DOWNLOAD {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 35px;
+  max-width: 150px;
+  width: 100%;
+  font-size: 20px;
+  font-family: 'Recursive';
+  border: 1px solid transparent;
+  border-radius: 7px;
+}
+.SUBMIT {
+  color: #09D100;
+  border-color: #09D100;
+}
+.SUBMIT:hover {
+  background: #09D100;
+  color: #fff;
+}
+.SUBMIT:focus {
+  box-shadow: 0 0 0 0.15rem #09D100;
+}
+.REMOVE {
+  color: #FF0000;
+  border-color: #FF0000;
+}
+.REMOVE:hover {
+  background: #FF0000;
+  color: #fff;
+}
+.REMOVE:focus {
+  box-shadow: 0 0 0 0.15rem #FF0000;
+}
+.DOWNLOAD {
+  color: #007bff;
+  border-color: #007bff;
+}
+.DOWNLOAD:hover {
+  background: #007bff;
+  color: #fff;
+}
+.DOWNLOAD:focus {
+  box-shadow: 0 0 0 0.15rem #007bff;
+}
+.ADD-DIV {
+  display: flex;
+  flex-direction: column;
+}
+.toggle {
+  cursor: pointer;
+  font-size: 16px;
+  font-family: Poppins;
+  color: #007BFF;
+  right: 0;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+    display: block;
+  }
+  .panel {
+    width: 100%;
+    margin-bottom: 20px;
+    max-width: 600px;
+    height: auto;
+    margin: 10px auto;
+  }
+  .timetable {
+    height: auto;
+
+  }
+}
+.ACT {
+  display: flex;
+  flex-direction: column;
+}
