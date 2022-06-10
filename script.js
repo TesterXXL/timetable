@@ -276,6 +276,7 @@ addBTN.addEventListener("click", function() {
 
 downloadBTN.addEventListener("click", function() {
 	note = document.querySelector('.NOTEINP').value;
+	if(note != '') {
 	if(!document.querySelector('.NOTE')) {
 		noteV = document.createElement('span');
 		noteV.className = 'NOTE';
@@ -285,5 +286,12 @@ downloadBTN.addEventListener("click", function() {
 	else {
 		document.querySelector('.NOTE').innerHTML = 'Note: ' + note;
 	}
+	}
+	else {
+		 if(document.querySelector('.NOTE')) {
+		 	document.querySelector('.NOTE').innerHTML = '';
+		 }
+	}
 	window.print();
+
 });
